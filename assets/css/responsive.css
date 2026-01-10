@@ -4,11 +4,9 @@
 @media (max-width: 1024px) {
 }
 @media (max-width: 768px) {
-    .hero-bg-video {
-        display: none;
-    }
+    
     .dtr-hero-video {
-        background: url(assets/images/hero-fallback.jpg) center/cover no-repeat;
+        background: url(assets/images/blogpost-img3.png) center/cover no-repeat;
     }
 }
 
