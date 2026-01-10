@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap');
+
+
+
 .dtr-hero-video {
     position: relative;
     height: 100vh;
@@ -96,7 +100,6 @@ html {
 /*----------------------------------------*/
 /*----- 1 Generate Google Fonts  -----*/
 /*----------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap');
 /*----------------------------------------*/
 /*----- 2 General Styles -----*/
 /*----------------------------------------*/
