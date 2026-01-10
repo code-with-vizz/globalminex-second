@@ -3,6 +3,14 @@
 
 @media (max-width: 1024px) {
 }
+@media (max-width: 768px) {
+    .hero-bg-video {
+        display: none;
+    }
+    .dtr-hero-video {
+        background: url(assets/images/hero-fallback.jpg) center/cover no-repeat;
+    }
+}
 
 @media (max-width: 992px) {
 .container { width: 100%; max-width: 100%; }
