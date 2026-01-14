@@ -138,18 +138,19 @@ font-size: 95%;
 /*----------------------------------------*/
 /*===== Header =====*/
 #dtr-header-global { background-color: #fff; }
-#dtr-header-global.trans-header { background-color: transparent; }
+#dtr-header-global.trans-header { background-color: white; color: #191c2f; }
 #dtr-header-global.on-scroll { background-color: #fff; }
 #dtr-header-global.on-scroll .on-scroll-color-dark { color: #191c2f !important; }
 /*----------------------------------------*/
 /*----- Footer -----*/
 /*----------------------------------------*/
-.dtr-footer-main { background-color: #191c2f; } 
+.dtr-footer-main { background-color: #ffffff; } 
 .dtr-copyright { background-color: #ea580c; }
-.dtr-footer-main h1, .dtr-footer-main h2, .dtr-footer-main h3, .dtr-footer-main h4, .dtr-footer-main h5, .dtr-footer-main h6 { color: #fff; } 
-.dtr-footer-main, .dtr-footer-main a, .dtr-copyright, .dtr-copyright a { color: #fff; }
-.dtr-copyright a:hover, .dtr-footer-main a:hover { color: rgba(255,255,255, .50); }
-.dtr-footer-main .dtr-list-border li { border-color: rgba(255, 255, 255, .10); }
+.dtr-footer-main h1, .dtr-footer-main h2, .dtr-footer-main h3, .dtr-footer-main h4, .dtr-footer-main h5, .dtr-footer-main h6 { color: #000000; } 
+.dtr-footer-main, .dtr-footer-main a { color: #1b1b1b; }
+.dtr-copyright, .dtr-copyright a { color: #ffffff;}
+.dtr-copyright a:hover, .dtr-footer-main a:hover { color: #ea580c; }
+.dtr-footer-main .dtr-list-border li { border-color: rgba(0, 0, 0, 0.1); }
 /*----------------------------------------*/
 /*----- Menu -----*/
 /*----------------------------------------*/
