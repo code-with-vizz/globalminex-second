@@ -1686,3 +1686,33 @@ opacity:0
   color: #000000; /* change if section is light */
   position: relative;
 }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-image img {
+  width: 250px;
+  height: auto;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
