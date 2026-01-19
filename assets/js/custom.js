@@ -153,43 +153,7 @@ $('.dtr-sticky-tabs-nav a.nav-link').on('click', function (e) {
 });
 
 
-    /* =============================
-       SLICK SLIDERS
-    ============================= */
-    if ($.fn.slick) {
-
-        $('.dtr-testimonial-slider').slick({
-            slidesToShow: 1,
-            arrows: false,
-            dots: true,
-            infinite: true,
-            autoplay: true,
-            fade: true,
-            speed: 1000
-        });
-
-        $('.dtr-img-slider-3col').slick({
-            slidesToShow: 3,
-            arrows: false,
-            autoplay: true,
-            responsive: [{ breakpoint: 768, settings: { slidesToShow: 2 } }]
-        });
-
-        $('.dtr-img-slider-2col').slick({
-            slidesToShow: 2,
-            arrows: false,
-            autoplay: true
-        });
-
-        $('.dtr-img-slider-1col').slick({
-            slidesToShow: 1,
-            arrows: true,
-            autoplay: true,
-            fade: true,
-            speed: 1500
-        });
-    }
-
+  
     /* =============================
        WOW / PARALLAX
     ============================= */
@@ -203,21 +167,6 @@ $('.dtr-sticky-tabs-nav a.nav-link').on('click', function (e) {
         }
     }
 
-    /* =============================
-       POPUPS
-    ============================= */
-    if ($.fn.venobox) {
-        $('.dtr-video-popup').venobox();
-    }
-
-    if ($.fn.magnificPopup) {
-        $('.popup-video').magnificPopup({ type: 'iframe', mainClass: 'mfp-fade' });
-        $('.popup-image').magnificPopup({ type: 'image' });
-        $('.popup-gallery').magnificPopup({
-            type: 'image',
-            gallery: { enabled: true }
-        });
-    }
 
     /* =============================
        COUNTER
