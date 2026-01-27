@@ -1,4 +1,8 @@
 // Custom JavaScript
+
+    /* =============================
+       STICKY HEADER
+    ============================= */
 $(document).ready(function () {
     "use strict";
 
@@ -31,39 +35,40 @@ $(document).ready(function () {
     }
 
     /* =============================
-       NAV SCROLL
+       SMOOTH SCROLL FUNCTION
     ============================= */
-    if ($('#dtr-header-global').length) {
-        var navoffset = $('#dtr-header-global').height();
-        $('.dtr-nav a[href^="#"], .dtr-scroll-link').on("click", function (e) {
-            e.preventDefault();
+    function smoothScroll(targetSelector) {
+        var navOffset = $('#dtr-header-global').outerHeight() || 0;
+        if ($(targetSelector).length) {
             $('html, body').animate({
-                scrollTop: $($(this).attr('href')).offset().top - navoffset - 37
-            }, "slow", "easeInSine");
-        });
-    } else {
-        $('.dtr-scroll-link').on("click", function (e) {
-            e.preventDefault();
-            $('html, body').animate({
-                scrollTop: $($(this).attr('href')).offset().top
-            }, "slow", "easeInSine");
-        });
+                scrollTop: $(targetSelector).offset().top - navOffset - 37
+            }, 700, "swing"); // change "swing" to "easeInSine" if you include jQuery Easing
+        }
     }
 
     /* =============================
-       RESPONSIVE HEADER SCROLL
+       NAV CLICK HANDLER
     ============================= */
-    if (typeof SmoothScroll === "function") {
-        var mnavoffset = $('.dtr-responsive-header').height();
-        new SmoothScroll('.dtr-responsive-header-menu a', {
-            speed: 500,
-            speedAsDuration: true,
-            offset: mnavoffset + 15
+    function attachNavClicks(selector) {
+        $(selector).on("click", function(e){
+            var target = $(this).attr('href');
+            if (target.startsWith("#") && $(target).length) {
+                e.preventDefault();
+                smoothScroll(target);
+                // Close mobile menu if open
+                if ($('.slicknav_nav').is(':visible')) {
+                    $("#dtr-menu-button").removeClass("is-active");
+                    $('.slicknav_nav').slideUp();
+                }
+            }
         });
     }
 
+    // Attach smooth scroll to desktop menu and scroll links
+    attachNavClicks('.dtr-nav a[href^="#"], .dtr-scroll-link');
+
     /* =============================
-       RESPONSIVE MENU
+       RESPONSIVE MENU (SLICKNAV)
     ============================= */
     if ($.fn.slicknav) {
         $('.main-navigation .dtr-nav').slicknav({
@@ -74,13 +79,10 @@ $(document).ready(function () {
             closeOnClick: true
         });
 
-        $('.slicknav_nav').addClass("dtr-scrollspy");
-
-        $("#dtr-menu-button").on("click", function () {
-            $(".slicknav_nav").slideToggle();
-            $(this).toggleClass("is-active");
-        });
+        // Attach smooth scroll to cloned mobile menu links
+        attachNavClicks('.slicknav_nav a[href^="#"]');
     }
+});
 
     /* =============================
        SECTION ANCHOR
@@ -92,7 +94,7 @@ $(document).ready(function () {
             setTimeout(function () {
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top - navoffset - 37
-                }, 800, 'easeInSine');
+                }, 800, 'swing');
                 history.pushState('', document.title, window.location.pathname);
             }, 500);
         }
@@ -109,7 +111,7 @@ $(document).ready(function () {
             setTimeout(function () {
                 $('html, body').animate({
                     scrollTop: $(hash2).offset().top - mnavoffset2 - 15
-                }, 800, 'easeInSine');
+                }, 800, 'swing');
                 history.pushState('', document.title, window.location.pathname);
             }, 500);
         }
@@ -191,7 +193,7 @@ $('.dtr-sticky-tabs-nav a.nav-link').on('click', function (e) {
         });
         $('#contactform #message').val('');
     }
-});
+
 
 /* =============================
    WINDOW LOAD
